@@ -13,34 +13,40 @@ jobs:
     # 1. Bajamos tu código
     - uses: actions/checkout@v4
 
-    # 2. Preparamos Java 17 (Necesario para Android moderno)
+    # 2. Preparamos Java 17
     - name: Configurar Java
       uses: actions/setup-java@v4
       with:
         distribution: 'temurin'
         java-version: '17'
 
-    # 3. Preparamos Node.js
+    # 3. INSTALAMOS GRADLE 8.2.1 (¡ESTO SOLUCIONA EL ERROR!)
+    - name: Configurar Gradle
+      uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: '8.2.1'
+
+    # 4. Preparamos Node.js
     - name: Configurar Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
 
-    # 4. Instalamos Cordova
+    # 5. Instalamos Cordova
     - name: Instalar Cordova
       run: npm install -g cordova
 
-    # 5. Instalamos dependencias del proyecto (si existen)
+    # 6. Instalamos dependencias
     - name: Instalar NPM
       run: npm install
 
-    # 6. Agregamos Android y compilamos
+    # 7. Compilamos forzando el uso de Gradle 8
     - name: Compilar APK
       run: |
         cordova platform add android
-        cordova build android --debug
+        cordova build android --debug -- --gradleArg=-PcdvGradleVersion=8.2.1
         
-    # 7. Subimos el archivo generado para que lo descargues
+    # 8. Subimos el archivo generado
     - name: Subir APK
       uses: actions/upload-artifact@v4
       with:
