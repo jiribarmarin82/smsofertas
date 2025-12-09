@@ -1,0 +1,34 @@
+<script>
+    $(document).ready(function(){
+        $('form button').on('click', function(event){
+            event.preventDefault();
+
+            const nombre = $('form input[type="text"]').val().trim();
+            const precio = $('form input[type="number"]').val().trim();
+            addProducto(nombre, precio);
+
+            LoadView('productos.html');
+
+        });
+    });
+</script>
+<section class="p-3">
+    <h1 class="text-black-50">Nuevo Contacto</h1>
+    <hr>
+    <form class="d-flex flex-column gap-3" action="">
+        <div class="d-flex flex-column gap-2">
+            <label for="">Nombre del Producto:</label>
+            <input class="form-control" type="text">
+        </div>
+
+        <div class="d-flex flex-column gap-2">
+            <label for="">Precio:</label>
+            <input class="form-control" type="number">
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-success shadow" type="button">Guardar</button>
+        </div>
+
+    </form>
+</section>

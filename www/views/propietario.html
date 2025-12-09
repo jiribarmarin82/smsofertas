@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--LIBS BOOTSTRAP-->
+    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/fonts/material-icons.min.css">
+    <link rel="stylesheet" href="../assets/poppinsfont/poppinsfont.css">
+    <link rel="stylesheet" href="../app.css">
+
+    <!--LIBS JQUERY-->
+    <script src="../assets/jquery/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="../assets/jquery/jquery-ui.css">
+    <script src="../assets/jquery/jquery-ui.min.js"></script>
+
+    <!--Dexie.js-->
+    <script src="../assets/dexie/dexie.js"></script>
+
+    <script src="../navbar.js"></script>
+
+    <script src="../db.js"></script>
+
+    <script src="../assets/js/propietario.js"></script>
+
+</head>
+
+<body>
+    <section class="p-3">
+        <h1 class="text-black-50">Datos del Propietario</h1>
+        <hr>
+        <form class="d-flex flex-column gap-3" action="">
+
+            <div class="d-flex flex-column gap-2">
+                <label for="">Nombre del Negocio:</label>
+                <input class="form-control" type="text" name="negocio">
+            </div>
+
+            <div class="d-flex flex-column gap-2">
+                <label for="">Nombre y Apellidos:</label>
+                <input class="form-control" type="text" name="nombre">
+            </div>
+
+            <div class="d-flex flex-column gap-2">
+                <label for="">Teléfono:</label>
+                <input class="form-control" type="number" name="telefono">
+            </div>
+
+            <div class="d-flex flex-column gap-2">
+                <label for="">Dirección:</label>
+                <textarea class="form-control" name="direccion"></textarea>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button class="button-guardar btn btn-success shadow" type="button">Guardar</button>
+            </div>
+
+        </form>
+    </section>
+    <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../offcanvas.js"></script>
+</body>
+
+</html>
